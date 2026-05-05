@@ -1,0 +1,40 @@
+
+:root{
+  --red: red;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 72px;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+li:hover{
+  cursor: pointer;
+  color: blue;
+}
+button{
+  all: unset;
+  border-color: transparent;
+  background-color: var(--red);
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+button:hover{
+  background-color: #d66a6a75;
+  color: var(--red);
+  cursor: pointer;
+}
