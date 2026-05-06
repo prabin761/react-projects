@@ -1,0 +1,7 @@
+
+.main_container{
+    height: calc(100vh - 80pxpx);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}

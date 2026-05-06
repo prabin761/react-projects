@@ -1,0 +1,23 @@
+
+.navigation{
+    height: 72px;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation ul{
+    list-style-type: none;
+    display: flex;
+    font-weight: 800;
+}
+.navigation ul li {
+    padding:10px 20px;
+}
+.navigation ul li:hover {
+    background-color: blue;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+}
