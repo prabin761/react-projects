@@ -32,15 +32,19 @@ const App = () => {
     passwordGenerator();
   }, [length, includeNumber, includeCharacters, passwordGenerator]);
 
+  const refresh = () => {
+    window.location.reload();
+  }
+
   return (
-    <main className="bg-gray-500 h-screen w-screen px-5 py-10">
+    <main className="bg-gray-500 h-screen w-screen px-5 py-50 flex flex-col gap-5 justify-around items-center">
       <h1 className=" text-white text-center font-bold mb-10">
         <span className="md:text-5xl text-3xl block mb-3">GENERATE </span>
         YOUR PASSWORD IN EASY WAY
       </h1>
 
-      <div className="shadow-2xl shadow-[rgba(0,0,0,0.8)] rounded-lg text-white bg-gray-700 w-120 m-auto px-5 space-y-10 py-10">
-        <div className="flex  shadow-2xl shadow-[rgba(0,0,0,0.8)] rounded-lg mb-4 bg-transparent border-gray-700">
+      <div className="shadow-2xl shadow-[rgba(0,0,0,0.8)] rounded-lg text-white bg-gray-700 md:w-120 m-auto px-5 space-y-10 py-10">
+        <div className="flex  shadow-2xl shadow-[rgba(0,0,0,0.8)] rounded-lg mb-10 bg-transparent border-gray-700">
           <input
             className="outline-none w-full py-2 px-3 text-white  font-light"
             placeholder="password"
@@ -56,7 +60,7 @@ const App = () => {
             copy
           </button>
         </div>
-        <div className="flex text-sm gap-x-4 items-center justify-around font-bold">
+        <div className="flex text-sm gap-4 md:gap-x-4 items-center justify-around font-bold flex-wrap md:flex-nowrap">
           <div className="flex items-center gap-x-1">
             <input
               type="range"
@@ -96,10 +100,13 @@ const App = () => {
           </div>
         </div>
       </div>
+      <button
+      className=" mt-10 text-2xl text-white font-bold  border-3 rounded-2xl px-5 py-3 bg-blue-700 outline-none hover:border-gray-900 active:border-gray-900"
+      onClick={refresh}
+      >Refresh</button>
     </main>
   );
 };
 
-// setPassword(pass);
 
 export default App;
