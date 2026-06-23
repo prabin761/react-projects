@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import  { useState, useCallback, useEffect, useRef } from "react";
 
 const App = () => {
   const [length, setLength] = useState(8);
@@ -21,16 +21,23 @@ const App = () => {
     setPassword(pass);
   }, [length, includeNumber, includeCharacters, setPassword]);
 
-  const copyPassword = () =>
-    useCallback(() => {
-      passwordRef.current?.select();
-      passwordRef.current?.setSelectionRange(length,password.length())
-      window.navigator.clipboard.writeText(password);
-    }, [password]);
-
-  useEffect(() => {
+    useEffect(() => {
     passwordGenerator();
   }, [length, includeNumber, includeCharacters, passwordGenerator]);
+
+  // const copyPassword = () =>
+  //   useCallback(() => {
+  //     passwordRef.current?.select();
+  //     passwordRef.current?.setSelectionRange(length,password.length())
+  //     window.navigator.clipboard.writeText(password);
+  //   }, []);
+  const copyPassword = useCallback(() =>{
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0,password.length);
+    window.navigator.clipboard.writeText(password);
+  },[password]);
+
+
 
   const refresh = () => {
     window.location.reload();
@@ -54,7 +61,7 @@ const App = () => {
             ref={passwordRef}
           />
           <button
-            onClick={copyPassword()}
+            onClick={copyPassword}
             className="outline-none bg-black px-3 py-0.5 shrink-0 cursor-pointer rounded-r-lg"
           >
             copy
